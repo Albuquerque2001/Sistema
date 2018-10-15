@@ -88,9 +88,9 @@ crossorigin="anonymous"></script>
 					}
 
 					if ($modo == 'inserir') {
-						$sql = "INSERT INTO horario_temperatura (horaLigar, horaDesligar, temperatura) 
-						VALUES ('".$_SESSION["horaLigar"]."', '".$_SESSION["horaDesligar"]."', 
-						'".$_SESSION["temperatura"]."')";
+						$sql = "UPDATE horario_temperatura SET horaLigar = '".$_SESSION["horaLigar"]."', 
+						horaDesligar = '".$_SESSION["horaDesligar"]."', 
+						temperatura = '".$_SESSION["temperatura"]."' WHERE id = '1'";
 						$result = $conn->query($sql);
 						if($result){
 							echo "<script> alert('Programado com sucesso!'); window.location = 'perfil.php'; </script>";

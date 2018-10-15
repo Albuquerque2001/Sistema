@@ -8,7 +8,8 @@ CREATE TABLE cadastro(
 	rg INT(13) NOT NULL);
 
 CREATE TABLE horario_temperatura(
-	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id INT NOT NULL,
 	horaLigar VARCHAR(5),
 	horaDesligar VARCHAR(5),
 	temperatura INT(2));
+INSERT INTO horario_temperatura(id) VALUES id = '1';
