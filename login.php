@@ -23,12 +23,13 @@ if(isset($_POST['senha'])){
 }
 
 if ($modo == 'inserir') {
-	$sql = "SELECT nome, senha FROM cadastro WHERE nome = '$nome' AND senha = '$senha'";
+	$sql = "SELECT id, nome, senha FROM cadastro WHERE nome = '$nome' AND senha = '$senha'";
 	$result = $conn->query($sql);
 	$row = $result->fetch_assoc();
 	if($row){
 		session_start();
-		$_SESSION['nome']="$nome";
+		$_SESSION['nome']=$row['nome'];
+		$_SESSION['id']=$row['id'];
 		header('Location: perfil.php');
 	}
 	else{

@@ -63,8 +63,6 @@ crossorigin="anonymous"></script>
 		<tbody>
 			<tr>
 
-				<!-- Fazer um update aqui também e não só um insert -->
-
 				<?php
 
 					$modo = "";
@@ -90,7 +88,7 @@ crossorigin="anonymous"></script>
 					if ($modo == 'inserir') {
 						$sql = "UPDATE horario_temperatura SET horaLigar = '".$_SESSION["horaLigar"]."', 
 						horaDesligar = '".$_SESSION["horaDesligar"]."', 
-						temperatura = '".$_SESSION["temperatura"]."' WHERE id = '1'";
+						temperatura = '".$_SESSION["temperatura"]."' ";
 						$result = $conn->query($sql);
 						if($result){
 							echo "<script> alert('Programado com sucesso!'); window.location = 'perfil.php'; </script>";
